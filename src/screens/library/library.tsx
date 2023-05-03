@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
+import PageView from '../../components/page-view/pageview';
 
 const Library = (): JSX.Element => {
-  return <View />;
+  return <PageView />;
 };
 
 export default Library;
