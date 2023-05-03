@@ -1,5 +1,8 @@
 import React from 'react';
 
+// General Import
+import SearchIcon from '../assets/icons/general/search.svg';
+
 // Navigation Import
 import ConfigsIcon from '../assets/icons/navigation/configs.svg';
 import HomeIcon from '../assets/icons/navigation/home.svg';
@@ -17,32 +20,40 @@ interface IconProps {
   width: number | string;
 }
 
+// General Icons
+const Search = (props: IconProps): JSX.Element => {
+  return <SearchIcon {...props} />;
+};
+
 // Navigation Icons
-const Configs = ({ color, height, width }: IconProps): JSX.Element => {
-  return <ConfigsIcon color={color} height={height} width={width} />;
+const Configs = (props: IconProps): JSX.Element => {
+  return <ConfigsIcon {...props} />;
 };
-const Home = ({ color, height, width }: IconProps): JSX.Element => {
-  return <HomeIcon color={color} height={height} width={width} />;
+const Home = (props: IconProps): JSX.Element => {
+  return <HomeIcon {...props} />;
 };
-const Library = ({ color, height, width }: IconProps): JSX.Element => {
-  return <LibraryIcon color={color} height={height} width={width} />;
+const Library = (props: IconProps): JSX.Element => {
+  return <LibraryIcon {...props} />;
 };
 
 // Player Icons
-const Next = ({ color, height, width }: IconProps): JSX.Element => {
-  return <NextIcon color={color} height={height} width={width} />;
+const Next = (props: IconProps): JSX.Element => {
+  return <NextIcon {...props} />;
 };
-const Pause = ({ color, height, width }: IconProps): JSX.Element => {
-  return <PauseIcon color={color} height={height} width={width} />;
+const Pause = (props: IconProps): JSX.Element => {
+  return <PauseIcon {...props} />;
 };
-const Play = ({ color, height, width }: IconProps): JSX.Element => {
-  return <PlayIcon color={color} height={height} width={width} />;
+const Play = (props: IconProps): JSX.Element => {
+  return <PlayIcon {...props} />;
 };
-const Prev = ({ color, height, width }: IconProps): JSX.Element => {
-  return <PrevIcon color={color} height={height} width={width} />;
+const Prev = (props: IconProps): JSX.Element => {
+  return <PrevIcon {...props} />;
 };
 
 export const Icons = {
+  General: {
+    Search,
+  },
   Navigation: {
     Configs,
     Home,

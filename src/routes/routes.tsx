@@ -25,7 +25,7 @@ const TabOptions: BottomTabNavigationOptions = {
 
 const Routes = (): JSX.Element => {
   return (
-    <Tab.Navigator initialRouteName={'HomeNavigator'} screenOptions={TabOptions}>
+    <Tab.Navigator initialRouteName={'LibraryNavigator'} screenOptions={TabOptions}>
       <Tab.Screen
         name={'HomeNavigator'}
         component={HomeRoutes}
