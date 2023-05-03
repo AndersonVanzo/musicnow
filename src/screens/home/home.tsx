@@ -5,7 +5,8 @@ import AlbumCover from './components/album-cover/albumcover';
 import Controls from './components/controls/controls';
 import { styles } from './styles';
 import { colors } from '../../common/colors';
-import Progressbar from './components/progress-bar/progressbar';
+import ProgressBar from './components/progress-bar/progressbar';
+import MusicInfos from './components/music-infos/musicinfos';
 
 const GradientColors = [colors.surface, colors.background, colors.background, colors.black];
 
@@ -14,7 +15,8 @@ const Home = (): JSX.Element => {
     <PageView customStyle={styles.container}>
       <LinearGradient style={styles.background} colors={GradientColors}>
         <AlbumCover />
-        <Progressbar />
+        <MusicInfos />
+        <ProgressBar />
         <Controls status={'playing'} />
       </LinearGradient>
     </PageView>
