@@ -16,6 +16,10 @@ const TabOptions: BottomTabNavigationOptions = {
   tabBarStyle: {
     backgroundColor: colors.black,
     borderTopWidth: 0,
+    height: 60,
+  },
+  tabBarLabelStyle: {
+    height: 20,
   },
 };
 
@@ -28,7 +32,9 @@ const Routes = (): JSX.Element => {
         options={{
           title: 'Início',
           // eslint-disable-next-line react/no-unstable-nested-components
-          tabBarIcon: ({ focused }) => <Icons.Navigation.Home color={focused ? colors.text : colors.text_inactive} height={22} width={22} />,
+          tabBarIcon: ({ focused }) => (
+            <Icons.Navigation.Home color={focused ? colors.text : colors.text_inactive} height={22} width={22} />
+          ),
         }}
       />
       <Tab.Screen
@@ -37,7 +43,9 @@ const Routes = (): JSX.Element => {
         options={{
           title: 'Biblioteca',
           // eslint-disable-next-line react/no-unstable-nested-components
-          tabBarIcon: ({ focused }) => <Icons.Navigation.Library color={focused ? colors.text : colors.text_inactive} height={22} width={22} />,
+          tabBarIcon: ({ focused }) => (
+            <Icons.Navigation.Library color={focused ? colors.text : colors.text_inactive} height={22} width={22} />
+          ),
         }}
       />
       <Tab.Screen
@@ -46,7 +54,9 @@ const Routes = (): JSX.Element => {
         options={{
           title: 'Configurações',
           // eslint-disable-next-line react/no-unstable-nested-components
-          tabBarIcon: ({ focused }) => <Icons.Navigation.Configs color={focused ? colors.text : colors.text_inactive} height={22} width={22} />,
+          tabBarIcon: ({ focused }) => (
+            <Icons.Navigation.Configs color={focused ? colors.text : colors.text_inactive} height={22} width={22} />
+          ),
         }}
       />
     </Tab.Navigator>
