@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 
 const LibraryRoutes = (): JSX.Element => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={'LibraryScreen'}>
       <Stack.Screen name={'LibraryScreen'} component={Library} />
     </Stack.Navigator>
   );

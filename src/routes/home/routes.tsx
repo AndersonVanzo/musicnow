@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 
 const HomeRoutes = (): JSX.Element => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={'HomeScreen'}>
       <Stack.Screen name={'HomeScreen'} component={Home} />
     </Stack.Navigator>
   );

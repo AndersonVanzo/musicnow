@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 
 const ConfigsRoutes = (): JSX.Element => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={'ConfigsScreen'}>
       <Stack.Screen name={'ConfigsScreen'} component={Configs} />
     </Stack.Navigator>
   );
