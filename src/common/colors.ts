@@ -6,5 +6,8 @@ export const colors = {
   surface: '#323232',
 
   text: '#E9E9E9',
-  text_inactive: '#B9B9B9',
+  text_inactive: '#7C7C7C',
+
+  black: '#000000',
+  white: '#FFFFFF',
 };

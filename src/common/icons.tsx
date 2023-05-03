@@ -18,15 +18,29 @@ interface IconProps {
 }
 
 // Navigation Icons
-const Configs = (props: IconProps): JSX.Element => <ConfigsIcon {...props} />;
-const Home = (props: IconProps): JSX.Element => <HomeIcon {...props} />;
-const Library = (props: IconProps): JSX.Element => <LibraryIcon {...props} />;
+const Configs = ({ color, height, width }: IconProps): JSX.Element => {
+  return <ConfigsIcon color={color} height={height} width={width} />;
+};
+const Home = ({ color, height, width }: IconProps): JSX.Element => {
+  return <HomeIcon color={color} height={height} width={width} />;
+};
+const Library = ({ color, height, width }: IconProps): JSX.Element => {
+  return <LibraryIcon color={color} height={height} width={width} />;
+};
 
 // Player Icons
-const Next = (props: IconProps): JSX.Element => <NextIcon {...props} />;
-const Pause = (props: IconProps): JSX.Element => <PauseIcon {...props} />;
-const Play = (props: IconProps): JSX.Element => <PlayIcon {...props} />;
-const Prev = (props: IconProps): JSX.Element => <PrevIcon {...props} />;
+const Next = ({ color, height, width }: IconProps): JSX.Element => {
+  return <NextIcon color={color} height={height} width={width} />;
+};
+const Pause = ({ color, height, width }: IconProps): JSX.Element => {
+  return <PauseIcon color={color} height={height} width={width} />;
+};
+const Play = ({ color, height, width }: IconProps): JSX.Element => {
+  return <PlayIcon color={color} height={height} width={width} />;
+};
+const Prev = ({ color, height, width }: IconProps): JSX.Element => {
+  return <PrevIcon color={color} height={height} width={width} />;
+};
 
 export const Icons = {
   Navigation: {
