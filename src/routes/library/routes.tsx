@@ -1,14 +1,18 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 
 import Library from '../../screens/library/library';
 
 const Stack = createStackNavigator();
 
+const ScreenOptions: StackNavigationOptions = {
+  headerShown: false,
+};
+
 const LibraryRoutes = (): JSX.Element => {
   return (
     <Stack.Navigator initialRouteName={'LibraryScreen'}>
-      <Stack.Screen name={'LibraryScreen'} component={Library} />
+      <Stack.Screen name={'LibraryScreen'} component={Library} options={ScreenOptions} />
     </Stack.Navigator>
   );
 };
