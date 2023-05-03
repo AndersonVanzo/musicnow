@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { styles } from './styles';
 
-const Progressbar = (): JSX.Element => {
+const ProgressBar = (): JSX.Element => {
   return (
     <View style={styles.container}>
       <View style={styles.barWrapper}>
@@ -17,4 +17,4 @@ const Progressbar = (): JSX.Element => {
   );
 };
 
-export default Progressbar;
+export default ProgressBar;
