@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     gap: 8,
-    paddingVertical: 8,
     width: '100%',
   },
   filter: {
