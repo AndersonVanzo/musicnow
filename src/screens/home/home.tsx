@@ -17,7 +17,7 @@ const Home = (): JSX.Element => {
         <AlbumCover />
         <MusicInfos />
         <ProgressBar />
-        <Controls status={'playing'} />
+        <Controls />
       </LinearGradient>
     </PageView>
   );

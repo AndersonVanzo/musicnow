@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
   filledBar: {
     backgroundColor: colors.primary,
     position: 'absolute',
-    width: '27%',
   },
   timeWrapper: {
     flexDirection: 'row',

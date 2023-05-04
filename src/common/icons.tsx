@@ -1,6 +1,7 @@
 import React from 'react';
 
 // General Import
+import CoverIcon from '../assets/icons/general/cover.svg';
 import SearchIcon from '../assets/icons/general/search.svg';
 
 // Navigation Import
@@ -21,6 +22,9 @@ interface IconProps {
 }
 
 // General Icons
+const Cover = (props: IconProps): JSX.Element => {
+  return <CoverIcon {...props} />;
+};
 const Search = (props: IconProps): JSX.Element => {
   return <SearchIcon {...props} />;
 };
@@ -52,6 +56,7 @@ const Prev = (props: IconProps): JSX.Element => {
 
 export const Icons = {
   General: {
+    Cover,
     Search,
   },
   Navigation: {
