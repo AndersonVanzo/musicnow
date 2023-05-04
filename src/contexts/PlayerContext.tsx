@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import TrackPlayer, { Event, Progress, State, Track, useProgress, useTrackPlayerEvents } from 'react-native-track-player';
 import { interpolate, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
-import RNFS from 'react-native-fs';
+import { MusicLibrary } from '../modules/music-library/musiclibrary';
 
 interface PlayerProviderProps {
   children: JSX.Element | Array<JSX.Element>;
@@ -79,26 +79,6 @@ const PlayerProvider = ({ children }: PlayerProviderProps) => {
     await TrackPlayer.pause();
   };
 
-  const loadSystemFiles = async (): Promise<void> => {
-    RNFS.readDir(RNFS.ExternalStorageDirectoryPath)
-      .then(result => {
-        console.log('GOT RESULT', result);
-        return Promise.all([RNFS.stat(result[0].path), result[0].path]);
-      })
-      .then(statResult => {
-        if (statResult[0].isFile()) {
-          return RNFS.readFile(statResult[1], 'utf8');
-        }
-        return 'no file';
-      })
-      .then(contents => {
-        console.log(contents);
-      })
-      .catch(err => {
-        console.log(err.message, err.code);
-      });
-  };
-
   const changeSharedValue = React.useCallback(() => {
     const currentTime = Math.round(progress.position);
     const totalTime = Math.round(progress.duration);
@@ -110,7 +90,11 @@ const PlayerProvider = ({ children }: PlayerProviderProps) => {
   }, [changeSharedValue]);
 
   React.useEffect(() => {
-    loadSystemFiles();
+    async function load() {
+      let test = await MusicLibrary.loadAllFiles();
+      console.log(test);
+    }
+    load();
   }, []);
 
   return (
