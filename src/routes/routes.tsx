@@ -25,13 +25,12 @@ const TabOptions: BottomTabNavigationOptions = {
 
 const Routes = (): JSX.Element => {
   return (
-    <Tab.Navigator initialRouteName={'LibraryNavigator'} screenOptions={TabOptions}>
+    <Tab.Navigator initialRouteName={'HomeNavigator'} screenOptions={TabOptions}>
       <Tab.Screen
         name={'HomeNavigator'}
         component={HomeRoutes}
         options={{
           title: 'Início',
-          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <Icons.Navigation.Home color={focused ? colors.text : colors.text_inactive} height={22} width={22} />
           ),
@@ -42,7 +41,6 @@ const Routes = (): JSX.Element => {
         component={LibraryRoutes}
         options={{
           title: 'Biblioteca',
-          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <Icons.Navigation.Library color={focused ? colors.text : colors.text_inactive} height={22} width={22} />
           ),
@@ -53,7 +51,6 @@ const Routes = (): JSX.Element => {
         component={ConfigsRoutes}
         options={{
           title: 'Configurações',
-          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <Icons.Navigation.Configs color={focused ? colors.text : colors.text_inactive} height={22} width={22} />
           ),
