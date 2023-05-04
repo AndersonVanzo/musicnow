@@ -1,8 +1,8 @@
 import React from 'react';
 import PageView from '../../components/page-view/pageview';
 
-const Configs = (): JSX.Element => {
+const About = (): JSX.Element => {
   return <PageView />;
 };
 
-export default Configs;
+export default About;

@@ -4,7 +4,7 @@ import React from 'react';
 import SearchIcon from '../assets/icons/general/search.svg';
 
 // Navigation Import
-import ConfigsIcon from '../assets/icons/navigation/configs.svg';
+import AboutIcon from '../assets/icons/navigation/about.svg';
 import HomeIcon from '../assets/icons/navigation/home.svg';
 import LibraryIcon from '../assets/icons/navigation/library.svg';
 
@@ -26,8 +26,8 @@ const Search = (props: IconProps): JSX.Element => {
 };
 
 // Navigation Icons
-const Configs = (props: IconProps): JSX.Element => {
-  return <ConfigsIcon {...props} />;
+const About = (props: IconProps): JSX.Element => {
+  return <AboutIcon {...props} />;
 };
 const Home = (props: IconProps): JSX.Element => {
   return <HomeIcon {...props} />;
@@ -55,7 +55,7 @@ export const Icons = {
     Search,
   },
   Navigation: {
-    Configs,
+    About,
     Home,
     Library,
   },

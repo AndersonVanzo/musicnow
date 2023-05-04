@@ -4,7 +4,7 @@ import { colors } from '../common/colors';
 
 import HomeRoutes from './home/routes';
 import LibraryRoutes from './library/routes';
-import ConfigsRoutes from './configs/routes';
+import AboutRoutes from './about/routes';
 import { Icons } from '../common/icons';
 
 const Tab = createBottomTabNavigator();
@@ -25,7 +25,7 @@ const TabOptions: BottomTabNavigationOptions = {
 
 const Routes = (): JSX.Element => {
   return (
-    <Tab.Navigator initialRouteName={'HomeNavigator'} screenOptions={TabOptions}>
+    <Tab.Navigator initialRouteName={'ConfigsNavigator'} screenOptions={TabOptions}>
       <Tab.Screen
         name={'HomeNavigator'}
         component={HomeRoutes}
@@ -47,12 +47,12 @@ const Routes = (): JSX.Element => {
         }}
       />
       <Tab.Screen
-        name={'ConfigsNavigator'}
-        component={ConfigsRoutes}
+        name={'AboutNavigator'}
+        component={AboutRoutes}
         options={{
-          title: 'Configurações',
+          title: 'Sobre',
           tabBarIcon: ({ focused }) => (
-            <Icons.Navigation.Configs color={focused ? colors.text : colors.text_inactive} height={22} width={22} />
+            <Icons.Navigation.About color={focused ? colors.text : colors.text_inactive} height={22} width={22} />
           ),
         }}
       />

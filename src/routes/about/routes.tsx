@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 
-import Configs from '../../screens/configs/configs';
+import About from '../../screens/about/about';
 
 const Stack = createStackNavigator();
 
@@ -9,12 +9,12 @@ const ScreenOptions: StackNavigationOptions = {
   headerShown: false,
 };
 
-const ConfigsRoutes = (): JSX.Element => {
+const AboutRoutes = (): JSX.Element => {
   return (
-    <Stack.Navigator initialRouteName={'ConfigsScreen'}>
-      <Stack.Screen name={'ConfigsScreen'} component={Configs} options={ScreenOptions} />
+    <Stack.Navigator initialRouteName={'AboutScreen'}>
+      <Stack.Screen name={'AboutScreen'} component={About} options={ScreenOptions} />
     </Stack.Navigator>
   );
 };
 
-export default ConfigsRoutes;
+export default AboutRoutes;
