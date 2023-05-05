@@ -8,6 +8,7 @@ interface PlayerProviderProps {
 }
 
 interface PlayerContextType {
+  library: Array<MusicFile>;
   progress: Progress;
   playerStatus: PlayerStatus;
   currentTrack: Track | null;
@@ -25,6 +26,7 @@ const PlayerContext = createContext<PlayerContextType>({} as PlayerContextType);
 const PlayerProvider = ({ children }: PlayerProviderProps) => {
   const [playerStatus, setPlayerStatus] = React.useState<PlayerStatus>('paused');
   const [currentTrack, setCurrentTrack] = React.useState<Track | null>(null);
+  const [library, setLibrary] = React.useState<MusicFile[]>([]);
   const progress = useProgress();
   const shared = useSharedValue(0);
 
@@ -85,21 +87,24 @@ const PlayerProvider = ({ children }: PlayerProviderProps) => {
     shared.value = Number((currentTime / totalTime).toFixed(2));
   }, [progress.position, progress.duration, shared]);
 
+  const loadLibrary = async (): Promise<void> => {
+    const deviceFiles = await MusicLibrary.loadAllFiles();
+    const deviceMusics: Array<MusicFile> = await JSON.parse(deviceFiles.files.replace(/[\u0000-\u001F]/g, ''));
+    setLibrary(deviceMusics);
+  };
+
   React.useEffect(() => {
     changeSharedValue();
   }, [changeSharedValue]);
 
   React.useEffect(() => {
-    async function load() {
-      let test = await MusicLibrary.loadAllFiles();
-      console.log(test);
-    }
-    load();
+    loadLibrary();
   }, []);
 
   return (
     <PlayerContext.Provider
       value={{
+        library,
         progress,
         playerStatus,
         currentTrack,
