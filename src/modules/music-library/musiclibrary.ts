@@ -1,10 +1,10 @@
 import { NativeModules } from 'react-native';
 
 interface MusicLibraryInterface {
-  loadAllFiles: () => Promise<string>;
+  loadAllFiles: () => Promise<MusicLibrary>;
 }
 
-const loadAllFiles = async (): Promise<string> => {
+const loadAllFiles = async (): Promise<MusicLibrary> => {
   return NativeModules.MusicLibraryModule.loadAllFiles();
 };
 

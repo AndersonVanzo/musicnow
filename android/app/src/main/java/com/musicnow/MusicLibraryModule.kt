@@ -1,6 +1,11 @@
 package com.musicnow
 
+import android.content.ContentUris
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.media.MediaMetadataRetriever
 import android.provider.MediaStore
+import android.util.Base64
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.Promise
@@ -9,6 +14,7 @@ import com.facebook.react.bridge.ReactContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.WritableMap
+import java.io.ByteArrayOutputStream
 
 class MusicLibraryModule(reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
@@ -30,12 +36,27 @@ class MusicLibraryModule(reactContext: ReactApplicationContext) :
             while (cursor.moveToNext()) {
                 val mimeType = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.MIME_TYPE))
                 if (mimeType.equals("audio/mpeg") || mimeType.equals("audio/mp4") || mimeType.equals("audio/vnd.wav")) {
+                    val filePath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA))
+                    var cover = ""
+                    try {
+                        val retriever = MediaMetadataRetriever()
+                        retriever.setDataSource(filePath)
+                        val byteCover = retriever.embeddedPicture
+                        if (byteCover != null) {
+                            cover = Base64.encodeToString(byteCover, Base64.DEFAULT)
+                        }
+                    } catch (e: Exception) {
+                        println("MusicLibraryModule error: ${e.message}")
+                        e.printStackTrace()
+                    }
                     val fileStr = "{" +
                             "\"id\":\"${cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID))}\"," +
                             "\"title\":\"${cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE))}\"," +
                             "\"album\":\"${cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM))}\"," +
                             "\"artist\":\"${cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST))}\"," +
-                            "\"path\":\"${cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA))}\"" +
+                            "\"length\":\"${cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION))}\"," +
+                            "\"path\":\"$filePath\"," +
+                            "\"cover\":\"$cover\"" +
                             "}"
                     list.add(fileStr)
                 }
