@@ -2,21 +2,40 @@ import React from 'react';
 import Routes from './src/routes/routes';
 import { NavigationContainer } from '@react-navigation/native';
 import { PlayerProvider } from './src/contexts/PlayerContext';
-import { addTracks, setupPlayer } from './src/services/player/service';
-import TrackPlayer from 'react-native-track-player';
+import { setupPlayer } from './src/services/player/service';
+import { ActivityIndicator, Text, View } from 'react-native';
+import { colors } from './src/common/colors';
 
 const App = (): JSX.Element => {
+  const [initializing, setInitializing] = React.useState<boolean>(true);
+  const [initialized, setInitialized] = React.useState<boolean>(false);
+
   const initPlayer = async () => {
-    let isSetup = await setupPlayer();
-    const queue = await TrackPlayer.getQueue();
-    if (isSetup && queue.length <= 0) {
-      await addTracks();
-    }
+    setInitializing(true);
+    let success = await setupPlayer();
+    setInitialized(success);
+    setInitializing(false);
   };
 
   React.useEffect(() => {
     initPlayer();
   }, []);
+
+  if (initializing) {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <ActivityIndicator size={'large'} color={colors.primary} />
+      </View>
+    );
+  }
+
+  if (!initialized) {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={{ color: colors.text }}>error</Text>
+      </View>
+    );
+  }
 
   return (
     <PlayerProvider>
