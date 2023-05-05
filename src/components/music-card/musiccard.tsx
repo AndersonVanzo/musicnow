@@ -4,18 +4,19 @@ import { styles } from './styles';
 import Button from '../button/button';
 import { Icons } from '../../common/icons';
 import { colors } from '../../common/colors';
-import { formatMilliseconds } from '../../utils/formatMilliseconds';
+import { Track } from 'react-native-track-player';
+import { formatSeconds } from '../../utils/formatSeconds';
 
 interface MusicCardProps {
-  data: MusicFile;
+  data: Track;
 }
 
 const MusicCard = ({ data }: MusicCardProps): JSX.Element => {
   return (
     <Button style={styles.container}>
       <View style={styles.image}>
-        {data.cover.length > 0 ? (
-          <Image style={styles.image} source={{ uri: `data:image/png;base64,${data.cover}` }} />
+        {data.artwork && typeof data.artwork === 'string' && data.artwork.length > 0 ? (
+          <Image style={styles.image} source={{ uri: data.artwork }} />
         ) : (
           <Icons.General.Cover color={colors.text} height={'100%'} width={'100%'} />
         )}
@@ -26,7 +27,7 @@ const MusicCard = ({ data }: MusicCardProps): JSX.Element => {
         </Text>
         <Text style={styles.artist}>{data.artist}</Text>
       </View>
-      <Text style={styles.length}>{formatMilliseconds(Number(data.length))}</Text>
+      <Text style={styles.length}>{formatSeconds(Number(data.length))}</Text>
     </Button>
   );
 };
