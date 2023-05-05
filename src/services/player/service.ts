@@ -21,26 +21,7 @@ export const setupPlayer = async () => {
 };
 
 export const addTracks = async () => {
-  await TrackPlayer.add([
-    {
-      id: '1',
-      url: require('../../assets/music1.mp3'),
-      title: 'Another World',
-      artist: 'Gojira',
-    },
-    {
-      id: '2',
-      url: require('../../assets/music2.mp3'),
-      title: 'From The Sky',
-      artist: 'Gojira',
-    },
-    {
-      id: '3',
-      url: require('../../assets/music3.mp3'),
-      title: 'Amazonia',
-      artist: 'Gojira',
-    },
-  ]);
+  await TrackPlayer.add([]);
   await TrackPlayer.setRepeatMode(RepeatMode.Queue);
 };
 

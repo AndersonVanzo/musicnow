@@ -2,6 +2,7 @@ import React, { createContext } from 'react';
 import TrackPlayer, { Event, Progress, State, Track, useProgress, useTrackPlayerEvents } from 'react-native-track-player';
 import { interpolate, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import { MusicLibrary } from '../modules/music-library/musiclibrary';
+import { setupPlayer } from '../services/player/service';
 
 interface PlayerProviderProps {
   children: JSX.Element | Array<JSX.Element>;
@@ -91,6 +92,8 @@ const PlayerProvider = ({ children }: PlayerProviderProps) => {
     const deviceFiles = await MusicLibrary.loadAllFiles();
     const deviceMusics: Array<Track> = await JSON.parse(deviceFiles.files.replace(/[\u0000-\u001F]/g, ''));
     setLibrary(deviceMusics);
+    await setupPlayer();
+    await TrackPlayer.add(deviceMusics);
   };
 
   React.useEffect(() => {

@@ -8,8 +8,12 @@ const MusicInfos = (): JSX.Element => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.song}>{currentTrack?.title}</Text>
-      <Text style={styles.artist}>{currentTrack?.artist}</Text>
+      <Text style={styles.song} numberOfLines={1}>
+        {currentTrack?.title}
+      </Text>
+      <Text style={styles.artist} numberOfLines={1}>
+        {currentTrack?.artist}
+      </Text>
     </View>
   );
 };
