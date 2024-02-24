@@ -27,6 +27,7 @@ export const CustomTabBarButton = ({
         <TouchableBox
             alignItems={"center"}
             borderlessEffect={true}
+            effectColor={theme.colors.black}
             height={BUTTON_SIZE}
             justifyContent={"center"}
             onPress={onClickTabButton}
