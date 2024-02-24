@@ -1,7 +1,7 @@
 import { ColorVariants } from "./types.ts";
 
 export const colors: ColorVariants = {
-    black: "#27272B",
+    black: "#131313",
     white: "#FAFAFA",
 
     blueDark: "#113DBF",
@@ -9,7 +9,8 @@ export const colors: ColorVariants = {
     blueLight: "#3F6CF2",
     blueLighter: "#B3CBF6",
 
-    grayDark: "#D9D9D9",
-    grayMedium: "#EFEEEE",
-    grayLight: "#F5F5F5",
+    grayDark: "#27272B",
+    grayMedium: "#505054",
+    grayLight: "#9f9e9e",
+    grayLighter: "#c9c9c9",
 };

@@ -8,7 +8,7 @@ export const LikedMusicItem = () => {
     return (
         <Box alignItems={"center"} flexDirection={"row"} gap={"medium"}>
             <Box
-                backgroundColor={"grayDark"}
+                backgroundColor={"grayMedium"}
                 borderRadius={8}
                 height={COVER_SIZE}
                 width={COVER_SIZE}
@@ -17,7 +17,7 @@ export const LikedMusicItem = () => {
                 <Text color={"white"} variant={"mediumBold"}>
                     Music Name
                 </Text>
-                <Text color={"grayDark"} variant={"small"}>
+                <Text color={"grayLight"} variant={"small"}>
                     Artist Name
                 </Text>
             </Box>

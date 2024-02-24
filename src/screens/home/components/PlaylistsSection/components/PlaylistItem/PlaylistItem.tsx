@@ -11,22 +11,24 @@ const ITEM_BORDER_RADIUS = 12;
 export const PlaylistItem = () => {
     return (
         <Box
-            backgroundColor={"white"}
+            backgroundColor={"grayDark"}
             borderRadius={ITEM_BORDER_RADIUS}
             flexDirection={"row"}
             height={ITEM_HEIGHT}
             width={ITEM_WIDTH}>
             <Box
-                backgroundColor={"grayDark"}
+                backgroundColor={"grayMedium"}
                 borderRadius={ITEM_BORDER_RADIUS}
                 height={ITEM_HEIGHT}
                 width={ITEM_HEIGHT}
             />
             <Box flex={1} justifyContent={"space-between"} padding={"extraSmall"}>
-                <Text numberOfLines={2} variant={"mediumBold"}>
+                <Text color={"white"} numberOfLines={2} variant={"mediumBold"}>
                     Playlist Name Name
                 </Text>
-                <Text variant={"extraSmall"}>by Author Name</Text>
+                <Text color={"white"} variant={"extraSmall"}>
+                    by Author Name
+                </Text>
             </Box>
         </Box>
     );

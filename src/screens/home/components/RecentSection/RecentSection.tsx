@@ -1,6 +1,6 @@
 import { Box } from "../../../../components/Box/Box.tsx";
 import { Text } from "../../../../components/Text/Text.tsx";
-import { ArtistItem } from "./components/ArtistItem.tsx";
+import { ArtistItem } from "./components/ArtistItem/ArtistItem.tsx";
 import { ScrollView, StyleSheet } from "react-native";
 import { theme } from "../../../../theme/theme.ts";
 

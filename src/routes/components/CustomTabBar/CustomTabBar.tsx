@@ -5,7 +5,7 @@ import { MainRoutesParamsList } from "../../types.ts";
 
 export const CustomTabBar = ({ state, navigation }: BottomTabBarProps) => {
     return (
-        <Box backgroundColor={"black"} flexDirection={"row"} paddingVertical={"small"}>
+        <Box backgroundColor={"grayDark"} flexDirection={"row"} paddingVertical={"small"}>
             {state.routes.map((route, index) => {
                 const isFocused = state.index === index;
 
