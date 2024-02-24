@@ -5,12 +5,16 @@ import { TouchableBoxProps } from "./types.ts";
 
 const Box = createBox<ThemeProps, PressableProps>(Pressable);
 
-export const TouchableBox = ({ children, ...props }: TouchableBoxProps) => {
+export const TouchableBox = ({
+    children,
+    borderlessEffect = false,
+    ...props
+}: TouchableBoxProps) => {
     return (
         <Box
             {...props}
             android_ripple={{
-                borderless: false,
+                borderless: borderlessEffect,
             }}>
             {children}
         </Box>
