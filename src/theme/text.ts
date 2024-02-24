@@ -41,4 +41,18 @@ export const textVariants: TextVariants = {
         fontWeight: "300",
         lineHeight: 14,
     },
+    extraSmall: {
+        fontSize: 10,
+        lineHeight: 12,
+    },
+    extraSmallBold: {
+        fontSize: 10,
+        fontWeight: "600",
+        lineHeight: 12,
+    },
+    extraSmallThin: {
+        fontSize: 10,
+        fontWeight: "300",
+        lineHeight: 12,
+    },
 };

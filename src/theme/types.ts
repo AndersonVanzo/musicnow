@@ -36,6 +36,9 @@ export type TextVariants = {
     small: Partial<ThemeTextStyles>;
     smallBold: Partial<ThemeTextStyles>;
     smallThin: Partial<ThemeTextStyles>;
+    extraSmall: Partial<ThemeTextStyles>;
+    extraSmallBold: Partial<ThemeTextStyles>;
+    extraSmallThin: Partial<ThemeTextStyles>;
 };
 
 export type ThemeProps = typeof theme;
