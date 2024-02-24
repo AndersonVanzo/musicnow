@@ -8,6 +8,7 @@ const Box = createBox<ThemeProps, PressableProps>(Pressable);
 export const TouchableBox = ({
     children,
     borderlessEffect = false,
+    effectColor,
     ...props
 }: TouchableBoxProps) => {
     return (
@@ -15,6 +16,7 @@ export const TouchableBox = ({
             {...props}
             android_ripple={{
                 borderless: borderlessEffect,
+                color: effectColor,
             }}>
             {children}
         </Box>
