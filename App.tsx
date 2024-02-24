@@ -1,3 +1,10 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { MainRoutes } from "./src/routes/main.routes";
+
 export const App = () => {
-    return null;
+    return (
+        <NavigationContainer>
+            <MainRoutes />
+        </NavigationContainer>
+    );
 };
