@@ -5,8 +5,9 @@ export const colors: ColorVariants = {
     white: "#FAFAFA",
 
     blueDark: "#113DBF",
-    blueLight: "#3F6CF2",
     blueMedium: "#48A1F3",
+    blueLight: "#3F6CF2",
+    blueLighter: "#B3CBF6",
 
     grayDark: "#D9D9D9",
     grayMedium: "#EFEEEE",

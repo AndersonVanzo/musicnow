@@ -7,6 +7,7 @@ export type ColorVariants = {
     blueDark: string;
     blueMedium: string;
     blueLight: string;
+    blueLighter: string;
     grayDark: string;
     grayMedium: string;
     grayLight: string;
