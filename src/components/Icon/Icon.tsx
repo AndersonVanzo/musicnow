@@ -1,5 +1,6 @@
 import { IconProps } from "./types.ts";
 
+import Close from "../../assets/icons/close.svg";
 import Heart from "../../assets/icons/heart.svg";
 import HeartFilled from "../../assets/icons/heart_filled.svg";
 import House from "../../assets/icons/house.svg";
@@ -8,6 +9,8 @@ import Search from "../../assets/icons/search.svg";
 
 export const Icon = ({ color, size, type }: IconProps) => {
     switch (type) {
+        case "close":
+            return <Close color={color} height={size} width={size} />;
         case "heart":
             return <Heart color={color} height={size} width={size} />;
         case "heart-filled":
