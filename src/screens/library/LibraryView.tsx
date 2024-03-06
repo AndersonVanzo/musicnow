@@ -2,7 +2,7 @@ import React from "react";
 import { SafeAreaBox } from "../../components/SafeAreaBox/SafeAreaBox.tsx";
 import { LibraryHeader } from "./components/LibraryHeader/LibraryHeader.tsx";
 import { PlaylistItem } from "./components/PlaylistItem/PlaylistItem.tsx";
-import { LibraryFilter, LibraryList } from "./types.ts";
+import { LibraryFilter, LibraryList } from "./Library.types.ts";
 import { FlashList } from "@shopify/flash-list";
 import { AlbumItem } from "./components/AlbumItem/AlbumItem.tsx";
 import { ArtistItem } from "./components/ArtistItem/ArtistItem.tsx";

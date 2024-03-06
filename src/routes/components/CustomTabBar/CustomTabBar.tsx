@@ -1,7 +1,7 @@
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Box } from "../../../components/Box/Box.tsx";
 import { CustomTabBarButton } from "../CustomTabBarButton/CustomTabBarButton.tsx";
-import { MainRoutesParamsList } from "../../types.ts";
+import { MainRoutesParamsList } from "../../main.routes.types.ts";
 
 export const CustomTabBar = ({ state, navigation }: BottomTabBarProps) => {
     return (

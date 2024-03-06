@@ -1,7 +1,7 @@
 import { createBox } from "@shopify/restyle";
-import { ThemeProps } from "../../theme/types.ts";
+import { ThemeProps } from "../../theme/theme.types.ts";
 import { Pressable, PressableProps } from "react-native";
-import { TouchableBoxProps } from "./types.ts";
+import { TouchableBoxProps } from "./TouchableBox.types.ts";
 
 const Box = createBox<ThemeProps, PressableProps>(Pressable);
 

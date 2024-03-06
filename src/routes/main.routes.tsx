@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MainRoutesParamsList } from "./types.ts";
+import { MainRoutesParamsList } from "./main.routes.types.ts";
 import { HomeController } from "../screens/home/HomeController.tsx";
 import { SearchController } from "../screens/search/SearchController.tsx";
 import { LibraryController } from "../screens/library/LibraryController.tsx";

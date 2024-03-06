@@ -1,4 +1,4 @@
-import { LibraryModuleProps } from "./LibraryModule/types.ts";
+import { LibraryModuleProps } from "./LibraryModule/LibraryModule.types.ts";
 
 declare module "react-native" {
     interface NativeModulesStatic {

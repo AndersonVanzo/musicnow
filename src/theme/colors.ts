@@ -1,4 +1,4 @@
-import { ColorVariants } from "./types.ts";
+import { ColorVariants } from "./theme.types.ts";
 
 export const colors: ColorVariants = {
     black: "#131313",

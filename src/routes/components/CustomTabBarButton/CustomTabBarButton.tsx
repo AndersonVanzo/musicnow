@@ -1,6 +1,6 @@
 import React from "react";
-import { CustomTabBarButtonProps } from "./types.ts";
-import { IconType } from "../../../components/Icon/types.ts";
+import { CustomTabBarButtonProps } from "./CustomTabBarButton.types.ts";
+import { IconType } from "../../../components/Icon/Icon.types.ts";
 import { Icon } from "../../../components/Icon/Icon.tsx";
 import { theme } from "../../../theme/theme.ts";
 import { TouchableBox } from "../../../components/TouchableBox/TouchableBox.tsx";

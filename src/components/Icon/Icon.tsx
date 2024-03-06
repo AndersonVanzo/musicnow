@@ -1,4 +1,4 @@
-import { IconProps } from "./types.ts";
+import { IconProps } from "./Icon.types.ts";
 
 import Close from "../../assets/icons/close.svg";
 import Heart from "../../assets/icons/heart.svg";

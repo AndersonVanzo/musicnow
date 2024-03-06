@@ -1,4 +1,4 @@
-import { AlbumProps, ArtistProps, PlaylistProps } from "./types.ts";
+import { AlbumProps, ArtistProps, PlaylistProps } from "./Library.types.ts";
 
 export const PLAYLIST_MOCK: PlaylistProps[] = [
     {

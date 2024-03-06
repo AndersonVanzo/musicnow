@@ -1,4 +1,4 @@
-import { SpacingVariants } from "./types.ts";
+import { SpacingVariants } from "./theme.types.ts";
 
 export const spacing: SpacingVariants = {
     none: 0,

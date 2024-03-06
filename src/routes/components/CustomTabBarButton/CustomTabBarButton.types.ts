@@ -1,4 +1,4 @@
-import { MainRoutesParamsList } from "../../types.ts";
+import { MainRoutesParamsList } from "../../main.routes.types.ts";
 
 export type CustomTabBarButtonProps = {
     isFocused: boolean;

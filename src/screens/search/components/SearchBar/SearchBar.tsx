@@ -1,7 +1,7 @@
 import { Box } from "../../../../components/Box/Box.tsx";
 import { TextInput, TextInputProps } from "react-native";
 import { createBox } from "@shopify/restyle";
-import { ThemeProps } from "../../../../theme/types.ts";
+import { ThemeProps } from "../../../../theme/theme.types.ts";
 import { Icon } from "../../../../components/Icon/Icon.tsx";
 import { theme } from "../../../../theme/theme.ts";
 

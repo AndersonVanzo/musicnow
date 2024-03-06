@@ -1,4 +1,4 @@
-import { TextVariants } from "./types.ts";
+import { TextVariants } from "./theme.types.ts";
 
 export const textVariants: TextVariants = {
     defaults: {
