@@ -9,7 +9,6 @@ export type DatabaseProps = {
 export type DatabaseKey =
     | "albums"
     | "artists"
-    | "last_albums"
     | "last_artists"
     | "last_playlists"
     | "playlists"
